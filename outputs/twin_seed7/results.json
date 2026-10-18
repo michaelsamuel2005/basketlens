@@ -1,0 +1,705 @@
+{
+ "supplier": "9001",
+ "category": "SIM CEREAL",
+ "holdout": {
+  "sd_change_per_household": 2.7572145348655797,
+  "mean_spend_per_household_per_window": 0.9630067796610169,
+  "n_per_arm_for_10pct_lift": 12869,
+  "n_per_arm_for_20pct_lift": 3218,
+  "mde_with_1100_vs_1400": 0.31123349659460897,
+  "mde_pct_with_1100_vs_1400": 32.318930994874684
+ },
+ "peers": [
+  {
+   "entity": "9001",
+   "net_sales": 32774.22000000021,
+   "share": 0.32282006561357873,
+   "buyers": 1210,
+   "penetration": 0.8120805369127517,
+   "trips_per_buyer": 6.857851239669421,
+   "sales_per_buyer": 27.086132231405134,
+   "discount_share": 1.0,
+   "shelf_price_per_unit": 3.964905795617349,
+   "skus": 12
+  },
+  {
+   "entity": "9002",
+   "net_sales": 26486.980000000105,
+   "share": 0.2608919028890856,
+   "buyers": 1216,
+   "penetration": 0.8161073825503355,
+   "trips_per_buyer": 5.5180921052631575,
+   "sales_per_buyer": 21.782055921052716,
+   "discount_share": 1.0,
+   "shelf_price_per_unit": 4.036294430069495,
+   "skus": 10
+  },
+  {
+   "entity": "9003",
+   "net_sales": 18888.289999999935,
+   "share": 0.18604619780816273,
+   "buyers": 1072,
+   "penetration": 0.7194630872483222,
+   "trips_per_buyer": 4.377798507462686,
+   "sales_per_buyer": 17.619673507462625,
+   "discount_share": 1.0,
+   "shelf_price_per_unit": 4.074222440944826,
+   "skus": 6
+  },
+  {
+   "entity": "PRIVATE LABEL",
+   "net_sales": 15064.430000000237,
+   "share": 0.1483818770067208,
+   "buyers": 1212,
+   "penetration": 0.8134228187919463,
+   "trips_per_buyer": 5.2483498349834985,
+   "sales_per_buyer": 12.429397689769171,
+   "discount_share": 1.0,
+   "shelf_price_per_unit": 2.4053878316031945,
+   "skus": 8
+  },
+  {
+   "entity": "9004",
+   "net_sales": 8310.809999999998,
+   "share": 0.0818599566824769,
+   "buyers": 626,
+   "penetration": 0.42013422818791946,
+   "trips_per_buyer": 2.9536741214057507,
+   "sales_per_buyer": 13.276054313099038,
+   "discount_share": 1.0,
+   "shelf_price_per_unit": 4.566107784431115,
+   "skus": 4
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Win share among mid-spend, own-label leaning households",
+   "evidence": "They are 29% of households and 28% of category sales, but the supplier takes 19% of their category spend against 40% in the best segment (brand index 58).",
+   "action": "Target the segment with the products and offers its leaning points to; read the result against a random holdout.",
+   "size": "Closing half the gap is worth about $2,864 a year, 9% of the supplier's category sales.",
+   "measure": "Share of category spend in the segment, treated vs holdout households, over 12 weeks.",
+   "value": 2863.651241773946,
+   "assumption": "Half the gap closed: an assumption, not a measurement."
+  },
+  {
+   "title": "Win back lapsed buyers before they settle elsewhere",
+   "evidence": "31% of established buyers (155 of 508) stopped buying the supplier by the last quarter yet still buy the category; 13% of what they spent on others was private label, against 20% for all households, so the loss is to other brands.",
+   "action": "Trigger an offer when an established buyer misses their usual gap; do not frame it as a private-label fight.",
+   "size": "These households spent about $8,595 a year with the supplier before lapsing; recovering a quarter is $2,149.",
+   "measure": "Return rate within 12 weeks, offered vs random holdout.",
+   "value": 2148.775,
+   "assumption": "A quarter recovered: an assumption, not a measurement."
+  },
+  {
+   "title": "Run the next campaign with a random holdout",
+   "evidence": "A plain comparison credits the 6 evaluable campaigns with $11,152 of supplier sales; after matching on past spend the estimate is $1,107 (95% interval $350 to $1,740). Targeted households already spent far more before the campaigns started.",
+   "action": "Hold out a random group: about 12,869 households per arm detects a 10% lift in supplier spend (3,218 for 20%).",
+   "size": "Turns campaign spend from a guess into a measured return.",
+   "measure": "Incremental supplier sales per coupon dollar, with an interval.",
+   "value": null,
+   "assumption": "Sample sizes assume the spread of spend seen in this data."
+  }
+ ],
+ "facts": {
+  "decomposition": [
+   {
+    "entity": "supplier",
+    "sales_h1": 20526.46000000005,
+    "sales_h2": 12247.759999999973,
+    "buyers": -4027.0557099856,
+    "frequency": -3856.3781495005055,
+    "spend_per_trip": -395.2661405139712,
+    "change": -8278.700000000077,
+    "check": 0.0
+   },
+   {
+    "entity": "private label",
+    "sales_h1": 8307.130000000063,
+    "sales_h2": 6757.3000000000475,
+    "buyers": -958.4879378393327,
+    "frequency": -468.79907188728816,
+    "spend_per_trip": -122.54299027338439,
+    "change": -1549.8300000000154,
+    "check": 1.000444171950221e-11
+   },
+   {
+    "entity": "other brands",
+    "sales_h1": 27987.500000000113,
+    "sales_h2": 25698.579999999885,
+    "buyers": -2152.3075434761777,
+    "frequency": 68.04008914451173,
+    "spend_per_trip": -204.6525456685899,
+    "change": -2288.9200000002274,
+    "check": -2.864908310584724e-11
+   },
+   {
+    "entity": "category",
+    "sales_h1": 56821.09000000183,
+    "sales_h2": 44703.640000000785,
+    "buyers": -5027.479727955056,
+    "frequency": -5421.30557960754,
+    "spend_per_trip": -1668.664692438532,
+    "change": -12117.450000001045,
+    "check": -8.185452315956354e-11
+   }
+  ],
+  "funnel": [
+   {
+    "stage": "category buyers",
+    "households": 1490,
+    "share_of_previous": null
+   },
+   {
+    "stage": "bought the supplier",
+    "households": 1210,
+    "share_of_previous": 0.8120805369127517
+   },
+   {
+    "stage": "2 or more trips",
+    "households": 965,
+    "share_of_previous": 0.7975206611570248
+   },
+   {
+    "stage": "4 or more trips",
+    "households": 688,
+    "share_of_previous": 0.7129533678756477
+   },
+   {
+    "stage": "8 or more trips",
+    "households": 377,
+    "share_of_previous": 0.5479651162790697
+   }
+  ],
+  "trial": {
+   "triers": 333,
+   "with_12w_followup": 290,
+   "repeated_12w": 114,
+   "repeat_rate": 0.3931034482758621,
+   "repeat_ci": [
+    0.33863516957348766,
+    0.45036679611142566
+   ]
+  },
+  "repeat_by_deal": {
+   "first purchase on discount": {
+    "n": 290,
+    "repeat_rate": 0.3931034482758621,
+    "ci": [
+     0.33863516957348766,
+     0.45036679611142566
+    ]
+   },
+   "first purchase at full price": {
+    "n": 0,
+    "repeat_rate": null,
+    "ci": [
+     null,
+     null
+    ]
+   }
+  },
+  "lifecycle": {
+   "established": 508,
+   "kept": 332,
+   "lapsed_to_others": 155,
+   "left_category": 21,
+   "lapse_rate": 0.3051181102362205,
+   "lapse_ci": [
+    0.26666271776394057,
+    0.34649885409735404
+   ],
+   "chance_silences_expected": 25.930724370194895,
+   "excess_lapsed": 150.0692756298051
+  },
+  "flows": {
+   "supplier_per_week_h1": 165.29038461538462,
+   "category_per_week_h1": 336.105,
+   "category_per_week_q4": 212.4476923076923,
+   "pl_share_of_rest_q4": 0.13327443497403887,
+   "pl_share_of_rest_h1": 0.18425508536019705,
+   "pl_share_of_rest_all_households_q4": 0.20184169172663377,
+   "annualised_value_of_lapsed": 8595.1
+  },
+  "segments": [
+   {
+    "segment": "High-spend, big-basket",
+    "households": 522,
+    "share_of_households": 0.348,
+    "sales_per_household": 2689.7145785440603,
+    "trips_per_household": 109.99233716475096,
+    "private_label_share": 0.0999885039290012,
+    "deal_depth": 0.07634375874563874,
+    "fresh_share": 0.27492268966870875,
+    "supplier_buyers": 510,
+    "supplier_sales": 23142.43,
+    "supplier_penetration": 0.9770114942528736,
+    "supplier_sales_per_buyer": 45.3773137254902,
+    "share_of_store_sales": 0.5639227232149029,
+    "share_of_supplier_sales": 0.706116880889919,
+    "share_of_category_sales": 0.5739851758285888,
+    "brand_index": 125.21518495732401,
+    "category_index": 101.78436728995779,
+    "supplier_share_of_segment_category": 0.3971334233339265
+   },
+   {
+    "segment": "Mid-spend, own-label leaning",
+    "households": 439,
+    "share_of_households": 0.2926666666666667,
+    "sales_per_household": 1618.0687243735767,
+    "trips_per_household": 84.31662870159454,
+    "private_label_share": 0.230368238108586,
+    "deal_depth": 0.09429306804391512,
+    "fresh_share": 0.27620133873111985,
+    "supplier_buyers": 326,
+    "supplier_sales": 5381.54,
+    "supplier_penetration": 0.7425968109339408,
+    "supplier_sales_per_buyer": 16.507791411042945,
+    "share_of_store_sales": 0.2853017125978945,
+    "share_of_supplier_sales": 0.16420039897211894,
+    "share_of_category_sales": 0.2755246923582067,
+    "brand_index": 57.55324686870832,
+    "category_index": 96.57309444424276,
+    "supplier_share_of_segment_category": 0.1923863270339479
+   },
+   {
+    "segment": "Low-spend, all-round",
+    "households": 397,
+    "share_of_households": 0.26466666666666666,
+    "sales_per_household": 829.5815113350128,
+    "trips_per_household": 49.6095717884131,
+    "private_label_share": 0.13222453508837825,
+    "deal_depth": 0.06741201895823341,
+    "fresh_share": 0.22038633969000082,
+    "supplier_buyers": 296,
+    "supplier_sales": 3706.9500000000003,
+    "supplier_penetration": 0.7455919395465995,
+    "supplier_sales_per_buyer": 12.523479729729731,
+    "share_of_store_sales": 0.132279476081734,
+    "share_of_supplier_sales": 0.11310566658794627,
+    "share_of_category_sales": 0.13417578160513205,
+    "brand_index": 85.5050760240837,
+    "category_index": 101.43355989876038,
+    "supplier_share_of_segment_category": 0.2721264469070985
+   },
+   {
+    "segment": "Drifting away",
+    "households": 142,
+    "share_of_households": 0.09466666666666666,
+    "sales_per_household": 324.30126760563377,
+    "trips_per_household": 19.683098591549296,
+    "private_label_share": 0.1292387954366935,
+    "deal_depth": 0.06873402661922833,
+    "fresh_share": 0.2216188389899065,
+    "supplier_buyers": 78,
+    "supplier_sales": 543.3,
+    "supplier_penetration": 0.5492957746478874,
+    "supplier_sales_per_buyer": 6.965384615384615,
+    "share_of_store_sales": 0.018496088105468832,
+    "share_of_supplier_sales": 0.016577053550015833,
+    "share_of_category_sales": 0.016314350208072453,
+    "brand_index": 89.6246463332666,
+    "category_index": 88.20432793704474,
+    "supplier_share_of_segment_category": 0.3280183057519426
+   }
+  ],
+  "segmentation": {
+   "k": 4,
+   "silhouette": {
+    "3": 0.4090066261035763,
+    "4": 0.4643755766418176,
+    "5": 0.3551694956810383,
+    "6": 0.32242033491593813,
+    "7": 0.2792019058022716
+   },
+   "stability_ari": 0.998411203255319
+  },
+  "promotions": {
+   "n_products_category": 40,
+   "n_products_supplier": 12,
+   "gross_own": {
+    "fitted_units": 3349.3327312095935,
+    "baseline_units": 2072.885999938564,
+    "incremental_units": 1276.4467312710294,
+    "inc_low": 1144.2754481284805,
+    "inc_high": 1417.4822102256073,
+    "pct_of_units": 38.11047852537624
+   },
+   "net_all_features": {
+    "fitted_units": 3349.3327312095935,
+    "baseline_units": 2193.259822245661,
+    "incremental_units": 1156.0729089639326,
+    "inc_low": 988.2557949789441,
+    "inc_high": 1319.0381798163755,
+    "pct_of_units": 34.51651423555112
+   },
+   "cannibalised_by_siblings": {
+    "fitted_units": 9766.000000000031,
+    "baseline_units": 10427.924411547785,
+    "incremental_units": -661.9244115477541,
+    "inc_low": -872.070744425524,
+    "inc_high": -418.81476836345155,
+    "pct_of_units": -6.77784570497391
+   },
+   "pull_forward": {
+    "fitted_units": 2942.0000000000073,
+    "baseline_units": 3394.0151088857983,
+    "incremental_units": -452.01510888579105,
+    "inc_low": -535.4537741266976,
+    "inc_high": -359.9843482946025,
+    "pct_of_units": -15.364211722834463
+   },
+   "competitor_pressure": {
+    "fitted_units": 9766.000000000031,
+    "baseline_units": 9779.00062898987,
+    "incremental_units": -13.000628989839242,
+    "inc_low": -192.92982934336663,
+    "inc_high": 141.2209868833012,
+    "pct_of_units": -0.13312132899691995
+   },
+   "featured_weeks": 135,
+   "depth_featured": 0.35013858034804407,
+   "depth_not_featured": 0.05067812555700571,
+   "panel_rows": 624,
+   "supplier_share_units_in_featured_weeks": 0.34200286708990374,
+   "converged": true
+  },
+  "promo_coefs_supplier": [
+   {
+    "term": "disp",
+    "coef": 0.7569994788654575,
+    "se": 0.05194018244367494,
+    "pct_effect": 113.18698934719586,
+    "ci_low": 92.55212711218215,
+    "ci_high": 136.03318804389363,
+    "p_value": 4.0841147627908506e-48
+   },
+   {
+    "term": "mail",
+    "coef": 0.29178118367235556,
+    "se": 0.035617972035252264,
+    "pct_effect": 33.881003209081626,
+    "ci_low": 24.85338694497432,
+    "ci_high": 43.56136792804575,
+    "p_value": 2.5699517592122606e-16
+   },
+   {
+    "term": "after1",
+    "coef": -0.1996464368063282,
+    "se": 0.01772550282807024,
+    "pct_effect": -18.097972268266126,
+    "ci_low": -20.894550703071857,
+    "ci_high": -15.202527686923972,
+    "p_value": 1.993139434765226e-29
+   },
+   {
+    "term": "after2",
+    "coef": -0.10424871265904079,
+    "se": 0.022013204898359992,
+    "pct_effect": -9.89988208472311,
+    "ci_low": -13.704660623111643,
+    "ci_high": -5.927350109929897,
+    "p_value": 2.18262251409647e-06
+   },
+   {
+    "term": "sib",
+    "coef": -0.38825931630673444,
+    "se": 0.06453463056755163,
+    "pct_effect": -32.17635573112647,
+    "ci_low": -40.23483334871013,
+    "ci_high": -23.031307705532498,
+    "p_value": 1.7845524317880225e-09
+   },
+   {
+    "term": "comp",
+    "coef": -0.016564688462167396,
+    "se": 0.10687949100027683,
+    "pct_effect": -1.6428248411339275,
+    "ci_low": -20.23205794035201,
+    "ci_high": 21.278469212579697,
+    "p_value": 0.8768333599102885
+   }
+  ],
+  "promo_coefs_category": [
+   {
+    "term": "disp",
+    "coef": 0.8189453200462238,
+    "se": 0.036649525708034605,
+    "pct_effect": 126.81064492199026,
+    "ci_low": 111.0895467540733,
+    "ci_high": 143.70258708197485,
+    "p_value": 1.3408888338632698e-110
+   },
+   {
+    "term": "mail",
+    "coef": 0.30645599551654146,
+    "se": 0.026873408088253396,
+    "pct_effect": 35.86016815966113,
+    "ci_low": 28.88935223077278,
+    "ci_high": 43.20799176120376,
+    "p_value": 4.007681200591023e-30
+   },
+   {
+    "term": "after1",
+    "coef": -0.2420361985912856,
+    "se": 0.02611269076491583,
+    "pct_effect": -21.49722398615397,
+    "ci_low": -25.413978261165948,
+    "ci_high": -17.374788221592365,
+    "p_value": 1.8805662913348722e-20
+   },
+   {
+    "term": "after2",
+    "coef": -0.1217003714341271,
+    "se": 0.01822779895703061,
+    "pct_effect": -11.458637602405963,
+    "ci_low": -14.566070007045283,
+    "ci_high": -8.23818059325414,
+    "p_value": 2.444898494094707e-11
+   },
+   {
+    "term": "sib",
+    "coef": -0.275162999434949,
+    "se": 0.02995667241521334,
+    "pct_effect": -24.05516765120025,
+    "ci_low": -28.38589092892263,
+    "ci_high": -19.46255234757008,
+    "p_value": 4.1013030562106515e-20
+   },
+   {
+    "term": "comp",
+    "coef": -0.08700965787156249,
+    "se": 0.07443620418241087,
+    "pct_effect": -8.333175747375044,
+    "ci_low": -20.77708657347569,
+    "ci_high": 6.065357926464743,
+    "p_value": 0.24243754237954684
+   }
+  ],
+  "ranging": {
+   "pareto": {
+    "skus": 12,
+    "skus_for_80pct_of_sales": 8,
+    "top10_share": 0.9355972468604894,
+    "bottom_half_share": 0.3059840935955173
+   },
+   "tail_n": 2,
+   "tail_sales": 2110.7500000000027,
+   "tail_sales_share": 0.06440275313951065,
+   "supplier_sales": 32774.21999999985
+  },
+  "range_scenarios": [
+   {
+    "scenario": "low transfer",
+    "tau_repertoire": 0.5,
+    "tau_exclusive": 0.0,
+    "delisted_sales": 2110.749999999998,
+    "kept_by_supplier": 200.3525911438085,
+    "moved_to_others": 824.9174088561905,
+    "lost_to_category": 1085.48,
+    "net_loss_to_supplier": 1910.3974088561897,
+    "transfer_rate_to_supplier": 0.09492009529494666,
+    "net_loss_pct_of_supplier_category_sales": 5.828963767425124
+   },
+   {
+    "scenario": "central",
+    "tau_repertoire": 0.8,
+    "tau_exclusive": 0.4,
+    "delisted_sales": 2110.749999999998,
+    "kept_by_supplier": 324.7923035672084,
+    "moved_to_others": 1339.7236964327913,
+    "lost_to_category": 446.23399999999907,
+    "net_loss_to_supplier": 1785.9576964327898,
+    "transfer_rate_to_supplier": 0.15387530667639876,
+    "net_loss_pct_of_supplier_category_sales": 5.449275974936392
+   },
+   {
+    "scenario": "full transfer",
+    "tau_repertoire": 1.0,
+    "tau_exclusive": 1.0,
+    "delisted_sales": 2110.749999999998,
+    "kept_by_supplier": 411.2755766304039,
+    "moved_to_others": 1699.474423369594,
+    "lost_to_category": 0.0,
+    "net_loss_to_supplier": 1699.4744233695942,
+    "transfer_rate_to_supplier": 0.19484807610110352,
+    "net_loss_pct_of_supplier_category_sales": 5.185400059466257
+   }
+  ],
+  "campaign_summary": {
+   "campaigns_eligible": 6,
+   "campaigns_total": 27,
+   "supplier_sales_targeted_in_windows": 13884.489999999998,
+   "supplier_coupon_value_in_windows": 323.0,
+   "coupon_value_pct_of_targeted_sales": 2.32633679739047,
+   "incremental_sales": 1106.8846695616114,
+   "incremental_low": 349.8302388626558,
+   "incremental_high": 1739.7648674318036,
+   "naive_incremental": 11152.466363636366,
+   "clean_campaigns": 2,
+   "clean_incremental": 1143.8576131481855,
+   "clean_low": 714.6083127931829,
+   "clean_high": 1501.0738846453905,
+   "clean_naive": 4427.9625000000015,
+   "placebo_effect": -808.3763442867129,
+   "placebo_low": -1449.164471004872,
+   "placebo_high": -263.46593451172396,
+   "sales_per_coupon_dollar": 3.426887521862574,
+   "sales_per_coupon_dollar_high": 5.386268939417349,
+   "breakeven_margin_if_effect_at_upper_bound": 0.1856572724547567
+  },
+  "campaign_table": [
+   {
+    "campaign_id": "1",
+    "campaign_type": "Type A",
+    "start_week": 8,
+    "weeks": 5,
+    "supplier_coupon_products": 7,
+    "pre_overlap": 0,
+    "targeted": 700,
+    "redeemed": 118,
+    "supplier_sales_targeted": 4073.6,
+    "coupon_disc": 70.0,
+    "coupon_match": 0.0
+   },
+   {
+    "campaign_id": "2",
+    "campaign_type": "Type B",
+    "start_week": 15,
+    "weeks": 5,
+    "supplier_coupon_products": 7,
+    "pre_overlap": 1,
+    "targeted": 400,
+    "redeemed": 93,
+    "supplier_sales_targeted": 2339.0099999999998,
+    "coupon_disc": 57.5,
+    "coupon_match": 0.0
+   },
+   {
+    "campaign_id": "3",
+    "campaign_type": "Type A",
+    "start_week": 22,
+    "weeks": 5,
+    "supplier_coupon_products": 7,
+    "pre_overlap": 1,
+    "targeted": 700,
+    "redeemed": 126,
+    "supplier_sales_targeted": 2969.77,
+    "coupon_disc": 77.5,
+    "coupon_match": 0.0
+   },
+   {
+    "campaign_id": "4",
+    "campaign_type": "Type B",
+    "start_week": 35,
+    "weeks": 5,
+    "supplier_coupon_products": 7,
+    "pre_overlap": 0,
+    "targeted": 300,
+    "redeemed": 56,
+    "supplier_sales_targeted": 1280.82,
+    "coupon_disc": 39.5,
+    "coupon_match": 0.0
+   },
+   {
+    "campaign_id": "5",
+    "campaign_type": "Type A",
+    "start_week": 42,
+    "weeks": 5,
+    "supplier_coupon_products": 7,
+    "pre_overlap": 1,
+    "targeted": 700,
+    "redeemed": 84,
+    "supplier_sales_targeted": 1854.32,
+    "coupon_disc": 54.0,
+    "coupon_match": 0.0
+   },
+   {
+    "campaign_id": "6",
+    "campaign_type": "Type B",
+    "start_week": 49,
+    "weeks": 5,
+    "supplier_coupon_products": 7,
+    "pre_overlap": 1,
+    "targeted": 300,
+    "redeemed": 41,
+    "supplier_sales_targeted": 1366.97,
+    "coupon_disc": 24.5,
+    "coupon_match": 0.0
+   }
+  ],
+  "campaign_by": {
+   "supplier_all|main": {
+    "total_effect": 1106.8846695616114,
+    "ci_low": 349.8302388626558,
+    "ci_high": 1739.7648674318036,
+    "naive_total": 11152.466363636366,
+    "targeted_household_campaigns": 3100,
+    "clean_campaigns": 2,
+    "clean_total_effect": 1143.8576131481855,
+    "clean_ci_low": 714.6083127931829,
+    "clean_ci_high": 1501.0738846453905,
+    "clean_naive_total": 4427.9625000000015
+   },
+   "supplier_all|placebo": {
+    "total_effect": -808.3763442867129,
+    "ci_low": -1449.164471004872,
+    "ci_high": -263.46593451172396,
+    "naive_total": 5310.535,
+    "targeted_household_campaigns": 2000,
+    "clean_campaigns": 1,
+    "clean_total_effect": -226.7949662168369,
+    "clean_ci_low": -443.54439472235106,
+    "clean_ci_high": -25.888930005143134,
+    "clean_naive_total": 743.6175000000004
+   },
+   "supplier_couponed|main": {
+    "total_effect": 730.5546057288957,
+    "ci_low": 100.824188084168,
+    "ci_high": 1227.5073472256333,
+    "naive_total": 6448.136818181818,
+    "targeted_household_campaigns": 3100,
+    "clean_campaigns": 2,
+    "clean_total_effect": 481.16197359950365,
+    "clean_ci_low": 117.69300203226639,
+    "clean_ci_high": 807.8662872616312,
+    "clean_naive_total": 2171.92
+   },
+   "supplier_couponed|placebo": {
+    "total_effect": -674.6595435859585,
+    "ci_low": -1096.0617072501755,
+    "ci_high": -244.5612639367592,
+    "naive_total": 3142.328749999999,
+    "targeted_household_campaigns": 2000,
+    "clean_campaigns": 1,
+    "clean_total_effect": -182.4965542200973,
+    "clean_ci_low": -341.9167722488145,
+    "clean_ci_high": -20.913153532147835,
+    "clean_naive_total": 488.14
+   },
+   "store_total|main": {
+    "total_effect": 1858.3880257416786,
+    "ci_low": -16443.974172360256,
+    "ci_high": 20450.557203650016,
+    "naive_total": 222687.1109090909,
+    "targeted_household_campaigns": 3100,
+    "clean_campaigns": 2,
+    "clean_total_effect": 2800.2907872880915,
+    "clean_ci_low": -6126.044004219572,
+    "clean_ci_high": 10785.799176418863,
+    "clean_naive_total": 71308.89124999999
+   },
+   "store_total|placebo": {
+    "total_effect": -127.99153107536813,
+    "ci_low": -15681.955537977728,
+    "ci_high": 15995.999628131183,
+    "naive_total": 140872.71750000003,
+    "targeted_household_campaigns": 2000,
+    "clean_campaigns": 1,
+    "clean_total_effect": -858.0474350760082,
+    "clean_ci_low": -4986.48815345762,
+    "clean_ci_high": 3500.800206468047,
+    "clean_naive_total": 21813.5075
+   }
+  }
+ }
+}

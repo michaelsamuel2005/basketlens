@@ -1,0 +1,128 @@
+{
+ "seeds": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "promo_intervals_inside": 39,
+ "promo_intervals": 42,
+ "campaign_pooled_inside": 6,
+ "rows": [
+  {
+   "seed": 1,
+   "promo_inside": {
+    "disp": true,
+    "mail": false,
+    "after1": true,
+    "after2": true,
+    "sib": true,
+    "comp": true
+   },
+   "campaign_pooled_inside": true,
+   "campaign_truth": 1228.2295014801953,
+   "campaign_est": 827.2823286122014,
+   "campaign_naive": 12977.285454545454,
+   "segment_ari": 0.9700551796091017
+  },
+  {
+   "seed": 2,
+   "promo_inside": {
+    "disp": true,
+    "mail": true,
+    "after1": true,
+    "after2": true,
+    "sib": true,
+    "comp": true
+   },
+   "campaign_pooled_inside": true,
+   "campaign_truth": 1514.1044992545928,
+   "campaign_est": 1396.169506358806,
+   "campaign_naive": 10860.266477272728,
+   "segment_ari": 0.9536330195502428
+  },
+  {
+   "seed": 3,
+   "promo_inside": {
+    "disp": true,
+    "mail": true,
+    "after1": true,
+    "after2": true,
+    "sib": true,
+    "comp": true
+   },
+   "campaign_pooled_inside": true,
+   "campaign_truth": 1585.5867381872883,
+   "campaign_est": 1319.8568388724236,
+   "campaign_naive": 13552.102500000003,
+   "segment_ari": 0.9311732360969319
+  },
+  {
+   "seed": 4,
+   "promo_inside": {
+    "disp": true,
+    "mail": true,
+    "after1": true,
+    "after2": true,
+    "sib": true,
+    "comp": true
+   },
+   "campaign_pooled_inside": true,
+   "campaign_truth": 1671.3840228532385,
+   "campaign_est": 1284.2668196545906,
+   "campaign_naive": 12130.668749999997,
+   "segment_ari": 0.9372551642054455
+  },
+  {
+   "seed": 5,
+   "promo_inside": {
+    "disp": true,
+    "mail": true,
+    "after1": true,
+    "after2": true,
+    "sib": true,
+    "comp": true
+   },
+   "campaign_pooled_inside": false,
+   "campaign_truth": 1939.912415220733,
+   "campaign_est": 486.54779012423546,
+   "campaign_naive": 13975.207954545453,
+   "segment_ari": 0.9432305600440205
+  },
+  {
+   "seed": 6,
+   "promo_inside": {
+    "disp": true,
+    "mail": true,
+    "after1": true,
+    "after2": false,
+    "sib": true,
+    "comp": true
+   },
+   "campaign_pooled_inside": true,
+   "campaign_truth": 1491.7366986157392,
+   "campaign_est": 1908.288993687957,
+   "campaign_naive": 12777.411477272726,
+   "segment_ari": 0.9547815215480904
+  },
+  {
+   "seed": 7,
+   "promo_inside": {
+    "disp": true,
+    "mail": true,
+    "after1": false,
+    "after2": true,
+    "sib": true,
+    "comp": true
+   },
+   "campaign_pooled_inside": true,
+   "campaign_truth": 1204.7969305691222,
+   "campaign_est": 1113.3950524928566,
+   "campaign_naive": 11152.466363636366,
+   "segment_ari": 0.9518436992756902
+  }
+ ]
+}

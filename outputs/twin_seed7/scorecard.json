@@ -1,0 +1,252 @@
+{
+ "summary": {
+  "seed": 7,
+  "passed": 23,
+  "total": 28,
+  "answer_key_sha256": "3f013abe8dc01cd447c5f79b444bdb5f83719f2a03992424a2fad4ff8ce3c6f2",
+  "households": 1500,
+  "lines": 730782
+ },
+ "checks": [
+  {
+   "group": "SQL",
+   "check": "fact_line keeps every raw line",
+   "planted": 730782,
+   "found": 730782,
+   "pass": true,
+   "standard": "equal"
+  },
+  {
+   "group": "SQL",
+   "check": "sale table net sales match pandas",
+   "planted": 2489757.82,
+   "found": 2489757.82,
+   "pass": true,
+   "standard": "within 1e-6"
+  },
+  {
+   "group": "SQL",
+   "check": "category buyers by quarter match pandas",
+   "planted": [
+    1416,
+    1383,
+    1264,
+    1256
+   ],
+   "found": [
+    1416,
+    1383,
+    1264,
+    1256
+   ],
+   "pass": true,
+   "standard": "equal"
+  },
+  {
+   "group": "SQL",
+   "check": "supplier + private label + other brands = category",
+   "planted": [
+    56821.09,
+    44703.64
+   ],
+   "found": [
+    56821.09,
+    44703.64
+   ],
+   "pass": true,
+   "standard": "equal"
+  },
+  {
+   "group": "Decomposition",
+   "check": "buyers x frequency x spend per trip adds exactly to the change",
+   "planted": 0.0,
+   "found": 8.185452315956354e-11,
+   "pass": true,
+   "standard": "|residual| < 1e-6"
+  },
+  {
+   "group": "Promotions",
+   "check": "supplier model: display uplift (%)",
+   "planted": 120.0,
+   "found": "113.2 [92.6, 136.0]",
+   "pass": true,
+   "standard": "planted value inside 95% interval"
+  },
+  {
+   "group": "Promotions",
+   "check": "supplier model: mailer uplift (%)",
+   "planted": 35.0,
+   "found": "33.9 [24.9, 43.6]",
+   "pass": true,
+   "standard": "planted value inside 95% interval"
+  },
+  {
+   "group": "Promotions",
+   "check": "supplier model: week after a feature (%)",
+   "planted": -22.1,
+   "found": "-18.1 [-20.9, -15.2]",
+   "pass": false,
+   "standard": "planted value inside 95% interval"
+  },
+  {
+   "group": "Promotions",
+   "check": "supplier model: weeks 2-3 after a feature (%)",
+   "planted": -11.3,
+   "found": "-9.9 [-13.7, -5.9]",
+   "pass": true,
+   "standard": "planted value inside 95% interval"
+  },
+  {
+   "group": "Promotions",
+   "check": "supplier model: cannibalisation by own products (%)",
+   "planted": -25.9,
+   "found": "-32.2 [-40.2, -23.0]",
+   "pass": true,
+   "standard": "planted value inside 95% interval"
+  },
+  {
+   "group": "Promotions",
+   "check": "supplier model: competitor features (%)",
+   "planted": 0.0,
+   "found": "-1.6 [-20.2, 21.3]",
+   "pass": true,
+   "standard": "planted value inside 95% interval"
+  },
+  {
+   "group": "Promotions",
+   "check": "category model: display uplift (%)",
+   "planted": 120.0,
+   "found": "126.8 [111.1, 143.7]",
+   "pass": true,
+   "standard": "planted value inside 95% interval"
+  },
+  {
+   "group": "Promotions",
+   "check": "category model: mailer uplift (%)",
+   "planted": 35.0,
+   "found": "35.9 [28.9, 43.2]",
+   "pass": true,
+   "standard": "planted value inside 95% interval"
+  },
+  {
+   "group": "Journeys",
+   "check": "lapsed buyers found: precision",
+   "planted": "250 planted lapsers",
+   "found": "0.65",
+   "pass": true,
+   "standard": ">= 0.60"
+  },
+  {
+   "group": "Journeys",
+   "check": "lapsed buyers found: recall among planted lapsers with 4+ trips in H1",
+   "planted": "151 detectable",
+   "found": "0.66",
+   "pass": true,
+   "standard": ">= 0.60"
+  },
+  {
+   "group": "Journeys",
+   "check": "where lapsed buyers went: private-label share of what they bought instead",
+   "planted": "0.12",
+   "found": "0.13",
+   "pass": true,
+   "standard": "within 0.06"
+  },
+  {
+   "group": "Journeys",
+   "check": "12-week repeat rate of new buyers",
+   "planted": "0.408 (expected from planted rates)",
+   "found": "0.393 [0.339, 0.450]",
+   "pass": true,
+   "standard": "expected rate inside 95% interval"
+  },
+  {
+   "group": "Segments",
+   "check": "adjusted Rand index against the four planted classes",
+   "planted": ">= 0.5",
+   "found": "0.95",
+   "pass": true,
+   "standard": ">= 0.50"
+  },
+  {
+   "group": "Segments",
+   "check": "planted 'stops shopping' class lands in one segment",
+   "planted": "share of class in modal segment",
+   "found": "1.00",
+   "pass": true,
+   "standard": ">= 0.70"
+  },
+  {
+   "group": "Segments",
+   "check": "segment stability (mean ARI across 80% subsamples)",
+   "planted": ">= 0.7",
+   "found": "1.00",
+   "pass": true,
+   "standard": ">= 0.70"
+  },
+  {
+   "group": "Segments",
+   "check": "segment holding the own-label class has the lowest supplier share",
+   "planted": "0.19",
+   "found": "others 0.27-0.40",
+   "pass": true,
+   "standard": "lowest of all segments"
+  },
+  {
+   "group": "Campaigns",
+   "check": "pooled incremental sales: planted total inside 95% interval",
+   "planted": 1205.0,
+   "found": "1107 [350, 1740]",
+   "pass": true,
+   "standard": "inside 95% interval"
+  },
+  {
+   "group": "Campaigns",
+   "check": "a plain targeted-vs-untargeted comparison overstates the effect",
+   "planted": 1205.0,
+   "found": 11152.0,
+   "pass": true,
+   "standard": "naive > 3 x planted"
+  },
+  {
+   "group": "Campaigns",
+   "check": "campaigns whose interval covers the planted effect",
+   "planted": "6 of 6",
+   "found": "4 of 6",
+   "pass": false,
+   "standard": "all but at most one"
+  },
+  {
+   "group": "Campaigns",
+   "check": "every campaign that misses was flagged as overlapping another in its pre window",
+   "planted": "misses flagged",
+   "found": "misses ['1', '2']; flagged ['2']",
+   "pass": false,
+   "standard": "no unflagged miss"
+  },
+  {
+   "group": "Campaigns",
+   "check": "a campaign with no planted effect and a clean pre window is not credited with one",
+   "planted": "interval includes 0",
+   "found": "none to test",
+   "pass": true,
+   "standard": "interval includes 0"
+  },
+  {
+   "group": "Ranging",
+   "check": "delist the tail: realised loss inside the low-to-high transfer range",
+   "planted": "1357",
+   "found": "1699 to 1910",
+   "pass": false,
+   "standard": "inside range"
+  },
+  {
+   "group": "Ranging",
+   "check": "delist the tail: central estimate (planted transfer rates) close to the realised loss",
+   "planted": "1357",
+   "found": "1786",
+   "pass": false,
+   "standard": "within 25%"
+  }
+ ]
+}

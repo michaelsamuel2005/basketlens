@@ -1,0 +1,8 @@
+campaign_id,campaign_type,start_week,weeks,supplier_coupon_products,pre_overlap,targeted,redeemed,supplier_sales_targeted,coupon_disc,coupon_match
+12,Type B,29,5,154,2,170,11,563.19,1.0,0.0
+13,Type A,33,7,224,3,1077,196,3282.87,28.7,3.3
+17,Type B,43,5,53,1,202,18,567.21,6.3,4.7
+18,Type A,45,8,232,2,1133,214,3858.63,28.75,8.25
+2,Type B,11,5,56,1,48,2,77.46,0.5,0.5
+8,Type A,20,7,218,2,1076,158,3476.08,25.85,5.15
+9,Type B,23,5,35,1,176,20,475.0,8.1,0.9

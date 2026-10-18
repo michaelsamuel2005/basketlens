@@ -1,0 +1,11 @@
+data/raw/
+data/parquet/
+data/*.duckdb
+data/twin_seed*/
+data/sweep*/
+data/twin*.duckdb
+data/sweep*.duckdb
+logs/
+__pycache__/
+*.pyc
+.pytest_cache/
